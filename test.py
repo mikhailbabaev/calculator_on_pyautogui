@@ -26,10 +26,7 @@ def test_calculate_process(monkeypatch):
         expressions = ['12+7', '45-23', '56*7', '100/5', 'exit']
 
         for expression in expressions:
-            print('цикл {expression}')
-            # Запускаем процесс вычислений
             if expression != 'exit':
-                # Мокаем input для каждого выражения
                 monkeypatch.setattr('builtins.input', lambda _: expression)
                 calculate_process(button_images)
             else:
